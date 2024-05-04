@@ -16,9 +16,9 @@ public class Window extends Canvas{
         game=G;
 
         Dimension screenSize=new Dimension(Game.WIDTH,Game.HEIGHT);
-        frame = new JFrame("IA");
+        frame = new JFrame("Doodle jump");
 
-        frame.setLocation(new Point(500,100));
+        frame.setLocation(new Point(4000,200));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.add(game);

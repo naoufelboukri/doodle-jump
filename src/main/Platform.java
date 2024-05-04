@@ -6,7 +6,7 @@ public class Platform {
     public int width;
     public int height;
     public Color color;
-    public Point position = new Point(100, 800);
+    public Point position = new Point(100, 700);
     
     public Platform() {
         width = 150;

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Game extends Canvas implements Runnable{
     public static int WIDTH=600;
-    public static int HEIGHT=1100;
+    public static int HEIGHT=1000;
     public static long DELTA=20;
     public int FLOOR = HEIGHT - 150;
     public Hero hero;
@@ -67,19 +67,19 @@ public class Game extends Canvas implements Runnable{
         }
         
         Platform platform = platforms.get(1);
-        if (hero.y >= platform.position.y + 5 && hero.y <= platform.position.y - 5) {
-            System.out.println(hero.ySpeed);
-            hero.jump();
+        if (hero.y + Hero.HEIGHT >= platform.position.y) {
+            if (hero.x + Hero.WIDTH >= platform.position.x && hero.x <= platform.position.x + platform.width && hero.ySpeed < 0) {
+                hero.jump();
+            }
         }
-        
     }
+
     public void Render(){
         BufferStrategy bs = this.getBufferStrategy();
         if(bs == null) {
             this.createBufferStrategy(2);
             return;
         }
-
 
         Graphics g = bs.getDrawGraphics();
         Graphics2D g2g =(Graphics2D)g;
